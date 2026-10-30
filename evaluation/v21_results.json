@@ -1,0 +1,557 @@
+{
+ "dataset": "evaluation/v21_labelled_set.json",
+ "caveat": "Tiny agent-labelled sets; regression tracking only.",
+ "label_provenance": {
+  "identification": "Gold identifiers are the DOI / arXiv id printed in each bibliography entry of the test manuscript, checked by the agent against the entry text; entries without a printed identifier are labelled by title (gold_title). The 'doi_stripped' variants remove the printed DOI so the gold identifier must be recovered from title/authors/year.",
+  "decomposition": "Sentences S1-S11 are the cited sentences of the test manuscript; they were inspected while developing the splitter (development set, results are optimistic). Sentences H1-H12 were written by the agent after development as a held-out sanity check. All labels were assigned by the agent, not by an independent human annotator.",
+  "support": "Real-paper positives were labelled by the agent from the cited works' abstracts and the retrieved passages; negatives are cross-paired controls (a claim checked against the full text of a cited work from an unrelated topic cluster in the same bibliography), which are reliably unsupported without reading the whole source. Labels marked 'uncertain' are excluded from metrics."
+ },
+ "B_decomposition_and_association": {
+  "development": {
+   "sentences": 11,
+   "proposition_count_exact": 1.0,
+   "proposition_precision": 1.0,
+   "proposition_recall": 1.0,
+   "association_accuracy": 1.0,
+   "association_pairs": 31,
+   "details": [
+    {
+     "id": "S1",
+     "gold_propositions": 2,
+     "predicted_propositions": 2,
+     "predicted": [
+      {
+       "text": "Robot scientists have generated hypotheses and tested them in the laboratory.",
+       "citations": {
+        "[1]": "direct",
+        "[2]": "direct"
+       }
+      },
+      {
+       "text": "Autonomous laboratories have used experimental feedback to select and carry out further experiments.",
+       "citations": {
+        "[3]": "direct",
+        "[4]": "direct"
+       }
+      }
+     ]
+    },
+    {
+     "id": "S2",
+     "gold_propositions": 1,
+     "predicted_propositions": 1,
+     "predicted": [
+      {
+       "text": "Systems based on large language models (LLMs) can also search the literature, propose ideas, plan experiments and analyse data.",
+       "citations": {
+        "[5]": "sentence_level",
+        "[6]": "sentence_level",
+        "[7]": "sentence_level"
+       }
+      }
+     ]
+    },
+    {
+     "id": "S3",
+     "gold_propositions": 1,
+     "predicted_propositions": 1,
+     "predicted": [
+      {
+       "text": "In recent studies, LLMs have challenged hypotheses, checked physical reasoning and revised interpretations in response to experimental evidence.",
+       "citations": {
+        "[6]": "sentence_level",
+        "[8]": "sentence_level",
+        "[9]": "sentence_level",
+        "[10]": "sentence_level"
+       }
+      }
+     ]
+    },
+    {
+     "id": "S4",
+     "gold_propositions": 1,
+     "predicted_propositions": 1,
+     "predicted": [
+      {
+       "text": "In one evaluation, an AI Scientist reported performance improvements that were based on flawed experiments.",
+       "citations": {
+        "[11]": "direct"
+       }
+      }
+     ]
+    },
+    {
+     "id": "S5",
+     "gold_propositions": 1,
+     "predicted_propositions": 1,
+     "predicted": [
+      {
+       "text": "Organized scepticism requires these uncertainties to be confronted rather than merely acknowledged.",
+       "citations": {
+        "[12]": "direct"
+       }
+      }
+     ]
+    },
+    {
+     "id": "S6",
+     "gold_propositions": 1,
+     "predicted_propositions": 1,
+     "predicted": [
+      {
+       "text": "Independent verification, precommitted predictions and acceptance criteria, and experimental controls provide safeguards against unjustified conclusions.",
+       "citations": {
+        "[13]": "sentence_level",
+        "[14]": "sentence_level",
+        "[15]": "sentence_level"
+       }
+      }
+     ]
+    },
+    {
+     "id": "S7",
+     "gold_propositions": 2,
+     "predicted_propositions": 2,
+     "predicted": [
+      {
+       "text": "Their optically readable spins can be manipulated through precisely controlled microwave-pulse sequences.",
+       "citations": {
+        "[16]": "ambiguous_scope",
+        "[17]": "ambiguous_scope",
+        "[18]": "ambiguous_scope"
+       }
+      },
+      {
+       "text": "Variations in spin properties create a nontrivial problem of predicting ensemble responses.",
+       "citations": {
+        "[16]": "multi_proposition",
+        "[17]": "multi_proposition",
+        "[18]": "multi_proposition"
+       }
+      }
+     ]
+    },
+    {
+     "id": "S8",
+     "gold_propositions": 1,
+     "predicted_propositions": 1,
+     "predicted": [
+      {
+       "text": "By separating the generation and evaluation of scientific claims across agents with distinct contexts, this design aims to reduce self-confirmation bias and the reinforcement of erroneous assumptions across successive reasoning steps.",
+       "citations": {
+        "[19]": "sentence_level",
+        "[20]": "sentence_level"
+       }
+      }
+     ]
+    },
+    {
+     "id": "S9",
+     "gold_propositions": 1,
+     "predicted_propositions": 1,
+     "predicted": [
+      {
+       "text": "Recent debate about AI scientists concerns whether automated research can produce conceptual insight and reliable scientific judgement.",
+       "citations": {
+        "[5]": "sentence_level",
+        "[21]": "sentence_level"
+       }
+      }
+     ]
+    },
+    {
+     "id": "S10",
+     "gold_propositions": 1,
+     "predicted_propositions": 1,
+     "predicted": [
+      {
+       "text": "Nitrogen-vacancy centres combine optical spin initialization and readout with programmable microwave control, allowing many experimental protocols to be executed without manual intervention once the apparatus is operational.",
+       "citations": {
+        "[8]": "sentence_level",
+        "[16]": "sentence_level",
+        "[17]": "sentence_level",
+        "[18]": "sentence_level"
+       }
+      }
+     ]
+    },
+    {
+     "id": "S11",
+     "gold_propositions": 1,
+     "predicted_propositions": 1,
+     "predicted": [
+      {
+       "text": "Limited diversity in generated research ideas has been identified in evaluations of LLM research agents.",
+       "citations": {
+        "[22]": "direct"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "held_out": {
+   "sentences": 12,
+   "proposition_count_exact": 0.9167,
+   "proposition_precision": 0.9412,
+   "proposition_recall": 0.8889,
+   "association_accuracy": 0.8947,
+   "association_pairs": 19,
+   "details": [
+    {
+     "id": "H1",
+     "gold_propositions": 2,
+     "predicted_propositions": 2,
+     "predicted": [
+      {
+       "text": "Graph neural networks predict molecular properties accurately.",
+       "citations": {
+        "[1]": "direct"
+       }
+      },
+      {
+       "text": "Transformer models now generate candidate molecules directly from text prompts.",
+       "citations": {
+        "[2]": "direct"
+       }
+      }
+     ]
+    },
+    {
+     "id": "H2",
+     "gold_propositions": 1,
+     "predicted_propositions": 1,
+     "predicted": [
+      {
+       "text": "Because the sensor drifts with temperature, the calibration must be repeated before every measurement session.",
+       "citations": {
+        "[3]": "direct"
+       }
+      }
+     ]
+    },
+    {
+     "id": "H3",
+     "gold_propositions": 2,
+     "predicted_propositions": 2,
+     "predicted": [
+      {
+       "text": "The vaccine reduced hospital admissions in older adults.",
+       "citations": {
+        "[4]": "direct"
+       }
+      },
+      {
+       "text": "However, protection waned within six months of the second dose.",
+       "citations": {
+        "[5]": "direct"
+       }
+      }
+     ]
+    },
+    {
+     "id": "H4",
+     "gold_propositions": 1,
+     "predicted_propositions": 1,
+     "predicted": [
+      {
+       "text": "Deep ensembles improve calibration under distribution shift, and they remain competitive with Bayesian approximations on large benchmarks.",
+       "citations": {
+        "[6]": "direct"
+       }
+      }
+     ]
+    },
+    {
+     "id": "H5",
+     "gold_propositions": 1,
+     "predicted_propositions": 1,
+     "predicted": [
+      {
+       "text": "Several groups have reported superconductivity in hydrides at high pressure.",
+       "citations": {
+        "[7]": "sentence_level",
+        "[8]": "sentence_level"
+       }
+      }
+     ]
+    },
+    {
+     "id": "H6",
+     "gold_propositions": 2,
+     "predicted_propositions": 2,
+     "predicted": [
+      {
+       "text": "Language models memorise rare training sequences.",
+       "citations": {
+        "[9]": "ambiguous_scope"
+       }
+      },
+      {
+       "text": "Larger models extract such sequences more often when prompted with their prefixes.",
+       "citations": {
+        "[9]": "multi_proposition"
+       }
+      }
+     ]
+    },
+    {
+     "id": "H7",
+     "gold_propositions": 1,
+     "predicted_propositions": 1,
+     "predicted": [
+      {
+       "text": "If the learning rate is too large, training diverges within the first few hundred steps.",
+       "citations": {
+        "[10]": "direct"
+       }
+      }
+     ]
+    },
+    {
+     "id": "H8",
+     "gold_propositions": 1,
+     "predicted_propositions": 1,
+     "predicted": [
+      {
+       "text": "The survey covered farms in Kenya, Uganda and Tanzania, and found that irrigation adoption doubled between 2010 and 2020.",
+       "citations": {
+        "[11]": "direct"
+       }
+      }
+     ]
+    },
+    {
+     "id": "H9",
+     "gold_propositions": 2,
+     "predicted_propositions": 2,
+     "predicted": [
+      {
+       "text": "Coral cover declined sharply after the 2016 heatwave.",
+       "citations": {
+        "[12]": "direct"
+       }
+      },
+      {
+       "text": "Reefs in upwelling zones recovered within a decade.",
+       "citations": {
+        "[13]": "direct"
+       }
+      }
+     ]
+    },
+    {
+     "id": "H10",
+     "gold_propositions": 2,
+     "predicted_propositions": 1,
+     "predicted": [
+      {
+       "text": "Retrieval augmentation reduces hallucination in question answering and improves factual consistency in summarisation.",
+       "citations": {
+        "[14]": "sentence_level",
+        "[15]": "sentence_level"
+       }
+      }
+     ]
+    },
+    {
+     "id": "H11",
+     "gold_propositions": 2,
+     "predicted_propositions": 2,
+     "predicted": [
+      {
+       "text": "Prior work measured the effect in mice.",
+       "citations": {
+        "[16]": "ambiguous_scope"
+       }
+      },
+      {
+       "text": "The authors did not test whether it generalises to humans.",
+       "citations": {
+        "[16]": "multi_proposition"
+       }
+      }
+     ]
+    },
+    {
+     "id": "H12",
+     "gold_propositions": 1,
+     "predicted_propositions": 1,
+     "predicted": [
+      {
+       "text": "These results suggest that the protein folds cooperatively, which explains the sharp melting transition observed in calorimetry.",
+       "citations": {
+        "[17]": "direct"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "C_support_synthetic_benchmark": {
+  "metrics": {
+   "n": 15,
+   "support_precision": 1.0,
+   "support_recall": 1.0,
+   "contradiction_precision": 1.0,
+   "contradiction_recall": 0.3333,
+   "false_positive_support_rate": 0.0,
+   "unresolved_rate": 0.6,
+   "evidence_coverage": 0.8667,
+   "exact_verdict_agreement": 0.7333,
+   "counts": {
+    "gold_supported": 4,
+    "predicted_supported": 4,
+    "false_positive_support": 0,
+    "unresolved": 9
+   }
+  },
+  "rows": [
+   {
+    "id": "sup-1",
+    "gold": "SUPPORTED",
+    "predicted": "VERIFIED_SUPPORTED",
+    "semantic_completed": true,
+    "reason_code": "NLI_ENTAILMENT"
+   },
+   {
+    "id": "sup-2",
+    "gold": "SUPPORTED",
+    "predicted": "VERIFIED_SUPPORTED",
+    "semantic_completed": true,
+    "reason_code": "NLI_ENTAILMENT"
+   },
+   {
+    "id": "sup-3",
+    "gold": "SUPPORTED",
+    "predicted": "VERIFIED_SUPPORTED",
+    "semantic_completed": true,
+    "reason_code": "NLI_ENTAILMENT"
+   },
+   {
+    "id": "sup-4",
+    "gold": "SUPPORTED",
+    "predicted": "VERIFIED_SUPPORTED",
+    "semantic_completed": true,
+    "reason_code": "NLI_ENTAILMENT"
+   },
+   {
+    "id": "par-1",
+    "gold": "PARTIALLY_SUPPORTED",
+    "predicted": "NEEDS_HUMAN_REVIEW",
+    "semantic_completed": true,
+    "reason_code": "UNGROUNDED_CONTRADICTION"
+   },
+   {
+    "id": "par-2",
+    "gold": "PARTIALLY_SUPPORTED",
+    "predicted": "NEEDS_HUMAN_REVIEW",
+    "semantic_completed": true,
+    "reason_code": "UNGROUNDED_CONTRADICTION"
+   },
+   {
+    "id": "par-3",
+    "gold": "PARTIALLY_SUPPORTED",
+    "predicted": "VERIFIED_PARTIALLY_SUPPORTED",
+    "semantic_completed": true,
+    "reason_code": "COMPONENT_ROLLUP"
+   },
+   {
+    "id": "con-1",
+    "gold": "CONTRADICTED",
+    "predicted": "VERIFIED_CONTRADICTED",
+    "semantic_completed": true,
+    "reason_code": "NLI_CONTRADICTION"
+   },
+   {
+    "id": "con-2",
+    "gold": "CONTRADICTED",
+    "predicted": "NEEDS_HUMAN_REVIEW",
+    "semantic_completed": true,
+    "reason_code": "UNGROUNDED_CONTRADICTION"
+   },
+   {
+    "id": "con-3",
+    "gold": "CONTRADICTED",
+    "predicted": "NEEDS_HUMAN_REVIEW",
+    "semantic_completed": true,
+    "reason_code": "UNGROUNDED_CONTRADICTION"
+   },
+   {
+    "id": "ins-1",
+    "gold": "INSUFFICIENT",
+    "predicted": "INSUFFICIENT_EVIDENCE",
+    "semantic_completed": true,
+    "reason_code": "NOT_ENTAILED"
+   },
+   {
+    "id": "ins-2",
+    "gold": "INSUFFICIENT",
+    "predicted": "INSUFFICIENT_EVIDENCE",
+    "semantic_completed": true,
+    "reason_code": "NOT_ENTAILED"
+   },
+   {
+    "id": "ins-3",
+    "gold": "INSUFFICIENT",
+    "predicted": "INSUFFICIENT_EVIDENCE",
+    "semantic_completed": true,
+    "reason_code": "NOT_ENTAILED"
+   },
+   {
+    "id": "unr-1",
+    "gold": "UNRESOLVABLE",
+    "predicted": "SOURCE_UNAVAILABLE",
+    "semantic_completed": false,
+    "reason_code": "NO_SOURCE_TEXT"
+   },
+   {
+    "id": "unr-2",
+    "gold": "UNRESOLVABLE",
+    "predicted": "SOURCE_UNAVAILABLE",
+    "semantic_completed": false,
+    "reason_code": "NO_SOURCE_TEXT"
+   }
+  ],
+  "model_health": {
+   "cross_encoder": "READY",
+   "nli": "READY"
+  }
+ },
+ "E_end_to_end": {
+  "report": "data/e2e-after-cold.json",
+  "processing_time_seconds": 94.62,
+  "full_text_retrieval_rate_references": 0.7273,
+  "identified_rate_references": 1.0,
+  "evidence_coverage_pairs": {
+   "numerator": 28,
+   "denominator": 31,
+   "denominator_definition": "pairs that are assertions (excludes NOT_VERIFIABLE)",
+   "percent": 90.3
+  },
+  "full_text_evidence_coverage_pairs": {
+   "numerator": 25,
+   "denominator": 31,
+   "percent": 80.6
+  },
+  "unresolved_rate_pairs": {
+   "numerator": 19,
+   "denominator": 31,
+   "percent": 61.3
+  },
+  "support_rate": {
+   "numerator": 8,
+   "denominator": 23,
+   "denominator_definition": "full-text pairs whose NLI check completed with a conclusive outcome (verified supported/partial/contradicted, or not entailed)",
+   "percent": 34.8
+  },
+  "verdict_counts": {
+   "SOURCE_METADATA_ONLY": 5,
+   "VERIFIED_SUPPORTED": 9,
+   "VERIFIED_PARTIALLY_SUPPORTED": 3,
+   "INSUFFICIENT_EVIDENCE": 12,
+   "NEEDS_HUMAN_REVIEW": 2
+  }
+ }
+}

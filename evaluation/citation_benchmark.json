@@ -1,0 +1,110 @@
+{
+ "description": "Small hand-written benchmark (15 cases). Illustrative only: too small to support statistical claims about accuracy. Passages are synthetic paraphrases written for this benchmark.",
+ "cases": [
+  {
+   "id": "sup-1",
+   "gold": "SUPPORTED",
+   "claim": "The encoder is composed of a stack of six identical layers [1].",
+   "source_text": "The encoder is composed of a stack of N = 6 identical layers. Each layer has two sub-layers, a multi-head self-attention mechanism and a position-wise fully connected feed-forward network.",
+   "note": ""
+  },
+  {
+   "id": "sup-2",
+   "gold": "SUPPORTED",
+   "claim": "Residual connections are employed around each of the two sub-layers [1].",
+   "source_text": "We employ a residual connection around each of the two sub-layers, followed by layer normalization. That is, the output of each sub-layer is LayerNorm(x + Sublayer(x)).",
+   "note": ""
+  },
+  {
+   "id": "sup-3",
+   "gold": "SUPPORTED",
+   "claim": "The trial enrolled 200 patients across five hospitals [1].",
+   "source_text": "This multicentre randomised trial enrolled 200 patients across five hospitals between 2015 and 2018. Participants were followed for twelve months after treatment began.",
+   "note": ""
+  },
+  {
+   "id": "sup-4",
+   "gold": "SUPPORTED",
+   "claim": "Training used the Adam optimizer with a warmup schedule [1].",
+   "source_text": "We used the Adam optimizer during training. The learning rate was increased linearly for the first warmup steps and decreased thereafter proportionally to the inverse square root of the step number.",
+   "note": ""
+  },
+  {
+   "id": "par-1",
+   "gold": "PARTIALLY_SUPPORTED",
+   "claim": "The encoder is composed of six identical layers and the decoder uses twelve attention heads per layer [1].",
+   "source_text": "The encoder is composed of a stack of six identical layers. Each layer has two sub-layers, a self-attention mechanism and a feed-forward network. The decoder inserts a third sub-layer performing attention over the encoder output.",
+   "note": "second proposition (twelve heads) not stated"
+  },
+  {
+   "id": "par-2",
+   "gold": "PARTIALLY_SUPPORTED",
+   "claim": "The trial enrolled 200 patients and reported no adverse events in any cohort [1].",
+   "source_text": "This multicentre randomised trial enrolled 200 patients across five hospitals. Several mild adverse events, including nausea and headache, were recorded in the treatment cohort during follow-up.",
+   "note": "first proposition supported, second contradicted-or-unsupported"
+  },
+  {
+   "id": "par-3",
+   "gold": "PARTIALLY_SUPPORTED",
+   "claim": "The model was trained on the WMT 2014 English-German dataset and evaluated on a Japanese corpus [1].",
+   "source_text": "The model was trained on the WMT 2014 English-German dataset consisting of about 4.5 million sentence pairs. Sentences were encoded using byte-pair encoding with a shared vocabulary.",
+   "note": "second proposition not stated"
+  },
+  {
+   "id": "con-1",
+   "gold": "CONTRADICTED",
+   "claim": "The encoder is composed of a stack of twelve identical layers [1].",
+   "source_text": "The encoder is composed of a stack of N = 6 identical layers. Each layer has two sub-layers.",
+   "note": ""
+  },
+  {
+   "id": "con-2",
+   "gold": "CONTRADICTED",
+   "claim": "The trial found that the treatment group had worse outcomes than placebo [1].",
+   "source_text": "In this randomised trial the treatment group had significantly better outcomes than the placebo group at twelve months. The difference was statistically significant across all cohorts.",
+   "note": ""
+  },
+  {
+   "id": "con-3",
+   "gold": "CONTRADICTED",
+   "claim": "The store is open on Sundays according to the survey [1].",
+   "source_text": "According to the survey, the store is closed on Sundays and on public holidays. Weekday opening hours were from nine to five.",
+   "note": ""
+  },
+  {
+   "id": "ins-1",
+   "gold": "INSUFFICIENT",
+   "claim": "The Transformer reaches a BLEU score of 28.4 on English-to-German translation [1].",
+   "source_text": "Recurrent neural networks have been firmly established as state of the art approaches in sequence modeling and transduction problems such as language modeling and machine translation. Numerous efforts have since continued to push the boundaries of recurrent language models.",
+   "note": "topical overlap only"
+  },
+  {
+   "id": "ins-2",
+   "gold": "INSUFFICIENT",
+   "claim": "The drug reduced mortality by 30 percent in elderly patients [1].",
+   "source_text": "The drug is administered orally once daily with food. Common side effects include nausea and headache, and dosing should be adjusted for patients with reduced kidney function.",
+   "note": "same drug, different proposition"
+  },
+  {
+   "id": "ins-3",
+   "gold": "INSUFFICIENT",
+   "claim": "Self-attention layers are faster than recurrent layers when the sequence length is smaller than the representation dimensionality [1].",
+   "source_text": "Attention mechanisms have become an integral part of compelling sequence modeling in various tasks, allowing modeling of dependencies without regard to their distance in the input or output sequences.",
+   "note": "topical overlap only"
+  },
+  {
+   "id": "unr-1",
+   "gold": "UNRESOLVABLE",
+   "claim": "Long short-term memory networks can learn dependencies over very long time lags [1].",
+   "source_text": null,
+   "note": "no source supplied and no bibliography entry"
+  },
+  {
+   "id": "unr-2",
+   "gold": "UNRESOLVABLE",
+   "claim": "Dropout is applied to the output of each sub-layer before normalization [1].",
+   "source_text": null,
+   "note": "no source supplied and no bibliography entry"
+  }
+ ]
+}
