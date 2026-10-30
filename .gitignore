@@ -1,0 +1,52 @@
+# Secrets / local env
+.env
+.env.local
+
+# Virtual environments
+.venv/
+.venv312/
+.venv312-run/
+venv/
+ENV/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Pytest
+.pytest_cache/
+.pytest-tmp*/
+
+# Linter caches
+.ruff_cache/
+.mypy_cache/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Node.js
+citeguard-frontend/node_modules/
+citeguard-frontend/dist/
+
+# Temp Node.js installations / archives
+*.zip
+node-v*-win-x64/
+
+# Sample / input PDFs
+*.pdf
+
+# Runtime data and retrieved scholarly content
+data/jobs/
+data/sources/
+data/e2e-*.json
+tmp/
+
+# Generated results
+evaluation_results.json
