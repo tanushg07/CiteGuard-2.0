@@ -41,6 +41,7 @@ node-v*-win-x64/
 
 # Sample / input PDFs
 *.pdf
+*.json
 
 # Runtime data and retrieved scholarly content
 data/jobs/
