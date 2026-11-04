@@ -38,6 +38,8 @@ Copy-Item .env.example .env
 # Explicit, optional model download:
 python scripts/prepare_models.py
 .\start.ps1
+
+.\.venv312\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 ```
 
 Open http://127.0.0.1:8000. Select a PDF, click Verify, wait for source lookup and verification, then inspect results. Reports can be reopened using `?job=<job_id>`. JSON and CSV exports use the canonical decisions.
